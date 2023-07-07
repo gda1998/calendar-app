@@ -1,7 +1,13 @@
+import { Suspense } from 'react'
+import { AppRouter } from './routes'
+import { RouterProvider } from 'react-router-dom'
+
 const App = () => {
     return (
-        <h1>CalendarApp</h1>
-    );
+        <Suspense fallback={ 'Loading...' }>
+            <RouterProvider router={AppRouter} />
+        </Suspense>
+    )
 }
 
 export default App

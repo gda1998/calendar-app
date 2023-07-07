@@ -1,6 +1,12 @@
-const RoutesWithNotFound = () => {
+import { Route, Routes } from 'react-router-dom'
+import { Error404 } from '../components/Errors'
+
+const RoutesWithNotFound = ({ children }) => {
     return (
-        <div>RoutesWithNotFound</div>
+        <Routes>
+            { children }
+            <Route path="*" element={ <Error404 /> } />
+        </Routes>
     )
 }
 
